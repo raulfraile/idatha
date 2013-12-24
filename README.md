@@ -4,7 +4,7 @@ Idatha
 Data structures library for PHP
 
 ```
-$set = new Idatha\Set\Set(new \Idatha\Set\Adapter\SimpleTypeSet());
+$set = new Idatha\Set();
 
 $set->add(1);
 $set->add(2);
@@ -12,7 +12,7 @@ $set->add(2);
 var_dump($set->isMember(1)); // true
 var_dump($set->isMember(3)); // false
 
-$set2 = new Idatha\Set\Set(new \Idatha\Set\Adapter\SimpleTypeSet());
+$set2 = new Idatha\Set();
 $set->add(2);
 $set->add(3);
 $set->add(4);
