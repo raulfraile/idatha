@@ -22,4 +22,13 @@ class SimpleTypeSetTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->adapter->isEmpty($data));
     }
 
+    public function testAddingAnElementIncrementsTheCounter()
+    {
+        $data = array();
+        $this->assertEquals(0, $this->adapter->count($data));
+
+        $data = $this->adapter->add($data, 1);
+        $this->assertEquals(1, $this->adapter->count($data));
+    }
+
 }
