@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
-$set = new Idatha\Set\Set();
+$set = new Idatha\Set();
 
 
 $element1 = new stdClass(1);
@@ -16,7 +16,7 @@ $set->add($element2);
 
 ld($set->isMember($element1), $set->isMember($element2), $set->isMember(new stdClass(1)));
 
-$set2 = new Idatha\Set\Set();
+$set2 = new Idatha\Set();
 
 $set2->add($element2);
 $set2->add($element3);
@@ -30,7 +30,7 @@ ld($set->isSubset($set2));
 
 
 ld($set->isMember($element1), $set->isMember($element2), $set->isMember(new stdClass(1)));
-$subset = new Idatha\Set\Set();
+$subset = new Idatha\Set();
 $subset->add($element1);
 $subset->add($element2);
 
