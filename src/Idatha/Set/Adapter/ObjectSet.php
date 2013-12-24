@@ -18,6 +18,8 @@ class ObjectSet implements AdapterInterface
         /** @var \SplObjectStorage $currentData */
 
         $currentData->attach($element);
+
+        return $currentData;
     }
 
     public function remove($currentData, $element)
@@ -25,6 +27,8 @@ class ObjectSet implements AdapterInterface
         /** @var \SplObjectStorage $currentData */
 
         $currentData->detach($element);
+
+        return $currentData;
     }
 
     public function isMember($currentData, $element)

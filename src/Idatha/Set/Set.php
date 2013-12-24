@@ -29,7 +29,7 @@ class Set
 
     public function remove($element)
     {
-        $this->adapter->remove($this->data, $element);
+        $this->data = $this->adapter->remove($this->data, $element);
     }
 
     public function isMember($element)
