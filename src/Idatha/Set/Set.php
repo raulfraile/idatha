@@ -3,19 +3,34 @@
 namespace Idatha\Set;
 
 use Idatha\Set\AdapterInterface;
+use Idatha\Set\Adapter;
 
 class Set
 {
 
     protected $adapter;
 
+    protected $initialized;
+
     protected $data;
 
 
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(AdapterInterface $adapter = null)
     {
-        $this->adapter = $adapter;
+        if (!is_null($adapter)) {
+            $this->adapter = $adapter;
+            $this->data = $this->adapter->initialize();
+            $this->initialized = true;
+        } else {
+            $this->initialized = false;
+        }
+    }
+
+    protected function initialize($firstElement)
+    {
+        $this->adapter = is_object($firstElement) ? new Adapter\ObjectSet() : new Adapter\SimpleTypeSet();
         $this->data = $this->adapter->initialize();
+        $this->initialized = true;
     }
 
     /**
@@ -24,6 +39,10 @@ class Set
      */
     public function add($element)
     {
+        if (!$this->initialized) {
+            $this->initialize($element);
+        }
+
         $this->data = $this->adapter->add($this->data, $element);
     }
 
