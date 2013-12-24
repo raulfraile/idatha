@@ -1,0 +1,22 @@
+{
+    "name": "raulfraile/idatha",
+    "description": "Data structures library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raul Fraile",
+            "email": "raulfraile@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "raulfraile/ladybug": "~1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Idatha": "src/"
+        }
+    }
+}
