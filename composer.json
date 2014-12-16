@@ -2,7 +2,7 @@
     "name": "raulfraile/idatha",
     "description": "Data structures library for PHP",
     "keywords": ["data", "structure", "set"],
-    "homepage": "https://github.com/raulfraile/ladybug",
+    "homepage": "https://github.com/raulfraile/idatha",
     "type": "library",
     "license": "MIT",
     "authors": [
